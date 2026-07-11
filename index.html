@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motshidisi &amp; Nakubiana — We're Getting Married</title>
+
+<!--
+  ============================================================
+  QUICK EDIT GUIDE — search for these markers to personalize:
+
+  [EDIT: NAMES]     — couple's names (appears a few times)
+  [EDIT: DATE]      — wedding date / time text
+  [EDIT: VENUE]     — ceremony & reception location
+  [EDIT: SCHEDULE]  — order of events
+  [EDIT: PHOTO]     — hero/couple photo
+
+  For the countdown date, edit the CONFIG block at the top of
+  js/script.js instead. Full setup steps are in README.md.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Scroll progress indicator -->
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ============ FIXED NAV ============ -->
+<nav class="site-nav" id="site-nav">
+  <a href="#hero" class="site-nav__brand">M&nbsp;&amp;&nbsp;N</a>
+  <div class="site-nav__links">
+    <a href="#story">Our Day</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#venue">Venue</a>
+    <a href="#rsvp" class="site-nav__cta">RSVP</a>
+  </div>
+</nav>
+
+<div class="page-frame">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__glow" aria-hidden="true" data-parallax="0.15"></div>
+    <div class="hero__bloom hero__bloom--tl" aria-hidden="true" data-parallax="0.08"></div>
+    <div class="hero__bloom hero__bloom--br" aria-hidden="true" data-parallax="0.1"></div>
+
+    <div class="petals" aria-hidden="true">
+      <span style="--x:8%; --dur:13s; --delay:0s;"></span>
+      <span style="--x:22%; --dur:16s; --delay:2s;"></span>
+      <span style="--x:38%; --dur:11s; --delay:4s;"></span>
+      <span style="--x:58%; --dur:15s; --delay:1s;"></span>
+      <span style="--x:74%; --dur:12s; --delay:3s;"></span>
+      <span style="--x:90%; --dur:17s; --delay:5s;"></span>
+    </div>
+
+    <div class="hero__ornament hero__ornament--top hero__in" style="--d:0" aria-hidden="true">
+      <svg viewBox="0 0 200 40" class="flourish"><path d="M0 20 Q 50 0 100 20 T 200 20" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="20" r="3" fill="currentColor"/></svg>
+    </div>
+
+    <p class="hero__eyebrow hero__in" style="--d:1">Together with their families</p>
+
+    <div class="hero__rings hero__in" style="--d:2" aria-hidden="true">
+      <img src="assets/rings.jpg" alt="" class="rings-photo">
+    </div>
+
+    <h1 class="hero__names hero__in" style="--d:3">
+      <span>Motshidisi</span>
+      <span class="hero__amp">&amp;</span>
+      <span>Nakubiana</span> <!-- [EDIT: NAMES] -->
+    </h1>
+
+    <p class="hero__request hero__in" style="--d:4">request the pleasure of your company as they celebrate their wedding</p>
+
+    <p class="hero__date hero__in" style="--d:5">Saturday, the 11th of November, 2026 &nbsp;·&nbsp; 4:00 PM</p> <!-- [EDIT: DATE] -->
+    <p class="hero__venue hero__in" style="--d:6">Rosewood Gardens, Nairobi</p> <!-- [EDIT: VENUE] -->
+
+    <div class="hero__ornament hero__ornament--bottom hero__in" style="--d:7" aria-hidden="true">
+      <svg viewBox="0 0 200 40" class="flourish"><path d="M0 20 Q 50 40 100 20 T 200 20" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="20" r="3" fill="currentColor"/></svg>
+    </div>
+
+    <a href="#story" class="hero__scroll hero__in" style="--d:8" aria-label="Scroll down">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ============ COUNTDOWN ============ -->
+  <section class="countdown-section">
+    <p class="section-eyebrow reveal">Counting down to</p>
+    <h2 class="section-title reveal">Our Wedding Day</h2>
+    <div class="countdown" id="countdown">
+      <div class="countdown__unit reveal reveal--pop"><span class="countdown__num" id="cd-days">00</span><span class="countdown__label">Days</span></div>
+      <div class="countdown__unit reveal reveal--pop"><span class="countdown__num" id="cd-hours">00</span><span class="countdown__label">Hours</span></div>
+      <div class="countdown__unit reveal reveal--pop"><span class="countdown__num" id="cd-mins">00</span><span class="countdown__label">Minutes</span></div>
+      <div class="countdown__unit reveal reveal--pop"><span class="countdown__num" id="cd-secs">00</span><span class="countdown__label">Seconds</span></div>
+    </div>
+  </section>
+
+  <!-- ============ PHOTO / STORY ============ -->
+  <section class="photo-section" id="story">
+    <div class="section-bloom section-bloom--right" aria-hidden="true" data-parallax="0.06"></div>
+    <p class="story-quote reveal">“Love isn't something you find. It's something you build, together, one day at a time.”</p>
+    <div class="photo-frame reveal reveal--scale">
+      <!-- [EDIT: PHOTO] Replace assets/couple-photo.jpg with your own photo.
+           If no photo is added, this section gracefully shows a decorative
+           panel instead — nothing breaks. -->
+      <img src="assets/couple-photo.jpg" alt="Motshidisi and Nakubiana" id="couple-photo"
+           onerror="this.closest('.photo-frame').classList.add('photo-frame--empty'); this.remove();">
+    </div>
+    <p class="photo-caption reveal">We can't wait to celebrate this new chapter with the people we love most.</p>
+  </section>
+
+  <!-- ============ SCHEDULE ============ -->
+  <section class="schedule-section" id="schedule">
+    <div class="section-bloom section-bloom--left" aria-hidden="true" data-parallax="0.05"></div>
+    <p class="section-eyebrow reveal">Order of Events</p>
+    <h2 class="section-title reveal">Wedding Day Schedule</h2>
+
+    <ol class="schedule-list"> <!-- [EDIT: SCHEDULE] -->
+      <li class="schedule-item reveal reveal--left">
+        <span class="schedule-dot" aria-hidden="true"></span>
+        <span class="schedule-time">3:00 PM</span>
+        <span class="schedule-desc">
+          <strong>Guest Arrival</strong>
+          Please be seated by 3:45 PM
+        </span>
+      </li>
+      <li class="schedule-item reveal reveal--right">
+        <span class="schedule-dot" aria-hidden="true"></span>
+        <span class="schedule-time">4:00 PM</span>
+        <span class="schedule-desc">
+          <strong>Ceremony</strong>
+          Rosewood Gardens, Main Lawn
+        </span>
+      </li>
+      <li class="schedule-item reveal reveal--left">
+        <span class="schedule-dot" aria-hidden="true"></span>
+        <span class="schedule-time">5:00 PM</span>
+        <span class="schedule-desc">
+          <strong>Cocktail Hour</strong>
+          Drinks &amp; canapés on the terrace
+        </span>
+      </li>
+      <li class="schedule-item reveal reveal--right">
+        <span class="schedule-dot" aria-hidden="true"></span>
+        <span class="schedule-time">6:30 PM</span>
+        <span class="schedule-desc">
+          <strong>Reception &amp; Dinner</strong>
+          Speeches, dinner and dancing
+        </span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ VENUE ============ -->
+  <section class="venue-section" id="venue">
+    <div class="section-bloom section-bloom--right section-bloom--light" aria-hidden="true" data-parallax="0.06"></div>
+    <p class="section-eyebrow reveal">Join Us At</p>
+    <h2 class="section-title reveal">Rosewood Gardens</h2> <!-- [EDIT: VENUE] -->
+    <p class="venue-address reveal">142 Garden Lane, Karen, Nairobi</p>
+    <a class="btn btn--outline reveal" href="https://maps.google.com/?q=Rosewood+Gardens+Nairobi" target="_blank" rel="noopener">
+      View on Google Maps
+    </a>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section class="rsvp-section" id="rsvp">
+    <div class="section-bloom section-bloom--left" aria-hidden="true" data-parallax="0.05"></div>
+    <p class="rsvp-badge reveal">Please Reply By November 1st, 2026</p>
+    <h2 class="section-title reveal">RSVP</h2>
+    <p class="rsvp-intro reveal">We would be so grateful if you could let us know whether you'll be joining us. <strong>Press the button below</strong> to share your name, whether you're attending, if you're bringing a guest, and any dietary needs.</p>
+
+    <div class="rsvp-arrow reveal" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 3v15M6 12l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <a class="btn btn--solid btn--pulse reveal" href="https://forms.gle/BH1CEgCYJwUYVeoB7" target="_blank" rel="noopener">
+      RSVP Now
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="hero__ornament" aria-hidden="true">
+      <svg viewBox="0 0 200 40" class="flourish"><path d="M0 20 Q 50 0 100 20 T 200 20" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="20" r="3" fill="currentColor"/></svg>
+    </div>
+    <p class="footer__text">With love, Motshidisi &amp; Nakubiana</p>
+    <p class="footer__sub">We can't wait to see you there</p>
+  </footer>
+
+</div>
+
+<!-- Floating RSVP reminder: shown once past the hero, hidden once the real RSVP section is on screen -->
+<a href="https://forms.gle/BH1CEgCYJwUYVeoB7" class="floating-rsvp" id="floating-rsvp" target="_blank" rel="noopener" aria-label="RSVP now">
+  <span class="floating-rsvp__pulse" aria-hidden="true"></span>
+  Please RSVP
+</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
