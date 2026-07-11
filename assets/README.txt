@@ -1,5 +1,6 @@
-rings.jpg    — real photo of two interlocked wedding rings (Unsplash, free license), used in the hero
-flowers.jpg  — real photo of a cream/blush rose bouquet (Unsplash, free license), used as a floral accent
+rings.jpg         — real photo of two interlocked wedding rings (Unsplash, free license), used in the hero
+flowers.jpg       — real photo of a cream/blush rose bouquet (Unsplash, free license), used as a floral accent
+floral-frame.jpg  — user-supplied cream floral wreath image, used as the page's overall background
 
 couple-photo.jpg — NOT included yet. Add your own photo here with this exact
 filename (jpg/png/webp all work — update the filename in index.html's
