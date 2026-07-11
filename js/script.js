@@ -3,7 +3,7 @@
    ========================================================= */
 const CONFIG = {
   // Used for the countdown timer. Format: "YYYY-MM-DDTHH:MM:SS"
-  weddingDateTime: "2026-11-11T16:00:00"
+  weddingDateTime: "2026-11-08T16:00:00"
 };
 
 /* =========================================================
