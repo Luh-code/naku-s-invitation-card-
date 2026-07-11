@@ -30,6 +30,8 @@
 
 html { scroll-behavior: smooth; }
 
+html, body { overflow-x: hidden; }
+
 body {
   margin: 0;
   background-color: var(--cream-soft);
@@ -42,7 +44,7 @@ body {
   font-family: var(--font-body);
   font-size: clamp(17px, 1.6vw, 19px);
   line-height: 1.65;
-  padding: clamp(0px, 3vw, 36px) 0;
+  padding: clamp(20px, 8vw, 40px);
 }
 
 .page-frame {
@@ -52,10 +54,7 @@ body {
   box-shadow: var(--shadow-soft);
   overflow: hidden;
   position: relative;
-}
-
-@media (min-width: 620px) {
-  .page-frame { border-radius: var(--radius-lg); }
+  border-radius: clamp(16px, 5vw, 28px);
 }
 
 section, footer {
@@ -272,9 +271,10 @@ section, footer {
 .hero {
   background: radial-gradient(circle at 50% 20%, #3c271a 0%, var(--brown-deep) 60%);
   color: var(--cream);
-  padding: clamp(110px, 16vw, 150px) 32px 70px;
+  padding: clamp(110px, 16vw, 150px) clamp(18px, 6vw, 32px) 70px;
   position: relative;
   overflow: hidden;
+  container-type: inline-size;
 }
 
 .hero__glow {
@@ -304,11 +304,12 @@ section, footer {
 
 .hero__eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.28em;
-  font-size: 13px;
+  letter-spacing: clamp(0.14em, 2vw, 0.28em);
+  font-size: clamp(11px, 3vw, 13px);
   color: var(--gold-soft);
   margin: 0 0 18px;
   position: relative;
+  white-space: nowrap;
 }
 
 .hero__rings {
@@ -331,12 +332,13 @@ section, footer {
 .hero__names {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(42px, 9vw, 64px);
+  font-size: clamp(15px, 9cqw, 64px);
   line-height: 1.15;
   margin: 0;
   color: var(--cream);
   position: relative;
   text-shadow: 0 2px 40px rgba(226, 196, 143, 0.25);
+  white-space: nowrap;
 }
 
 .hero__names span { display: inline-block; }
@@ -358,7 +360,7 @@ section, footer {
 }
 
 .hero__date {
-  font-size: 21px;
+  font-size: clamp(16px, 4.5vw, 21px);
   letter-spacing: 0.03em;
   margin: 0 0 4px;
   color: var(--cream);
@@ -366,7 +368,7 @@ section, footer {
 }
 
 .hero__venue {
-  font-size: 17px;
+  font-size: clamp(14px, 3.5vw, 17px);
   color: var(--gold-soft);
   margin: 0;
   position: relative;
@@ -404,16 +406,18 @@ section, footer {
 .countdown {
   display: flex;
   justify-content: center;
-  gap: clamp(10px, 2.5vw, 20px);
-  flex-wrap: wrap;
+  gap: clamp(6px, 2.5vw, 20px);
+  flex-wrap: nowrap;
 }
 
 .countdown__unit {
   background: linear-gradient(155deg, var(--brown-deep), #241509);
   color: var(--cream);
   border-radius: var(--radius-md);
-  min-width: 88px;
-  padding: 22px 12px;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 110px;
+  padding: clamp(12px, 4vw, 22px) clamp(4px, 2vw, 12px);
   box-shadow: var(--shadow-lift);
   border: 1px solid rgba(216, 189, 143, 0.25);
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
@@ -426,16 +430,16 @@ section, footer {
 .countdown__num {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 34px);
+  font-size: clamp(19px, 6vw, 34px);
   color: var(--gold-bright);
   font-variant-numeric: tabular-nums;
 }
 
 .countdown__label {
   display: block;
-  font-size: 11.5px;
+  font-size: clamp(8.5px, 2.4vw, 11.5px);
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: clamp(0.06em, 1vw, 0.16em);
   margin-top: 6px;
   color: var(--cream-soft);
 }
