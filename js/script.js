@@ -11,7 +11,7 @@ const CONFIG = {
   googleForm: {
     // Looks like: https://docs.google.com/forms/d/e/<FORM_ID>/formResponse
     actionUrl:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdJxxZjfemhHtyC_oBf-mu75FrtPlaeWCJSEm28sbYtSTYyyA/viewform?usp=pp_url&entry.877086558=luyando+muksk&entry.1498135098=Yes,+I'd+love+to!&entry.1424661284=Yes,+I'll+have+someone+joining+me!&entry.1537563506=Groom's+side&entry.2606285=no",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdJxxZjfemhHtyC_oBf-mu75FrtPlaeWCJSEm28sbYtSTYyyA/viewform?usp=pp_url&entry.877086558=luyando+mulonda&entry.1498135098=Yes,+I'd+love+to!&entry.1424661284=Yes,+I'll+have+someone+joining+me!&entry.1537563506=Bride's+side&entry.2606285=no",
     // Each looks like "entry.1234567890" (one per question in the form)
     entries: {
       name: "entry.877086558", // Full Name
