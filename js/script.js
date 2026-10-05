@@ -279,6 +279,7 @@ const CONFIG = {
     body.append(gf.entries.name, name);
     body.append(gf.entries.attending, data.get("attending"));
     body.append(gf.entries.guest, data.get("guest"));
+    body.append(gf.entries.side, data.get("side"));
     body.append(
       gf.entries.questions,
       (data.get("questions") || "").toString().trim(),
