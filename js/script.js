@@ -231,7 +231,7 @@ const CONFIG = {
    ========================================================= */
 (function rsvpForm() {
   const form = document.getElementById("rsvp-form");
-  const thanks = document.getElementById("rsvp-thanks");
+  let thanks = document.getElementById("rsvp-thanks");
   const msg = document.getElementById("rsvp-message");
   const submit = document.getElementById("rsvp-submit");
   if (!form) return;
@@ -291,18 +291,27 @@ const CONFIG = {
       // no-cors: Google doesn't send CORS headers, so the response is opaque,
       // but the submission still lands in the form's Responses tab.
       await fetch(gf.actionUrl, { method: "POST", mode: "no-cors", body });
-      if (!thanks) throw new Error("RSVP confirmation element is missing.");
-      thanks.removeAttribute("hidden");
-      form.hidden = true;
-      thanks.setAttribute("tabindex", "-1");
-      thanks.focus({ preventScroll: true });
-      thanks.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (err) {
       showError(
         "Sorry, something went wrong. Please check your connection and try again.",
       );
       submit.disabled = false;
       submit.textContent = "Send RSVP";
+      return;
     }
+
+    if (!thanks) {
+      thanks = document.createElement("div");
+      thanks.id = "rsvp-thanks";
+      thanks.className = "rsvp-thanks";
+      thanks.innerHTML =
+        "<h3>Thank you!</h3><p>Your RSVP has been received. We can't wait to celebrate with you.</p>";
+    }
+    thanks.removeAttribute("hidden");
+    thanks.style.display = "block";
+    thanks.tabIndex = -1;
+    form.replaceWith(thanks);
+    thanks.focus({ preventScroll: true });
+    thanks.scrollIntoView({ behavior: "smooth", block: "center" });
   });
 })();
