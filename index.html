@@ -13,7 +13,6 @@
   [EDIT: DATE]      — wedding date / time text
   [EDIT: VENUE]     — ceremony & reception location
   [EDIT: SCHEDULE]  — order of events
-  [EDIT: PHOTO]     — hero/couple photo
 
   For the countdown date, edit the CONFIG block at the top of
   js/script.js instead. Full setup steps are in README.md.
@@ -36,7 +35,6 @@
     <nav class="site-nav" id="site-nav">
       <a href="#hero" class="site-nav__brand">M&nbsp;&amp;&nbsp;N</a>
       <div class="site-nav__links">
-        <a href="#story">Our Day</a>
         <a href="#schedule">Schedule</a>
         <a href="#venue">Venue</a>
         <a href="#rsvp" class="site-nav__cta">RSVP</a>
@@ -103,11 +101,11 @@
         </p>
 
         <p class="hero__date hero__in" style="--d: 5">
-          Sunday, the 8th of November, 2026 &nbsp;·&nbsp; 2:00 PM
+          Saturday, the 11th of November, 2026 &nbsp;·&nbsp; 4:00 PM
         </p>
         <!-- [EDIT: DATE] -->
         <p class="hero__venue hero__in" style="--d: 6">
-          Sago Palm Executive Lodge, Libala Lusaka
+          Rosewood Gardens, Nairobi
         </p>
         <!-- [EDIT: VENUE] -->
 
@@ -128,7 +126,7 @@
         </div>
 
         <a
-          href="#story"
+          href="#schedule"
           class="hero__scroll hero__in"
           style="--d: 8"
           aria-label="Scroll down"
@@ -161,37 +159,6 @@
         </div>
       </section>
 
-      <!-- ============ PHOTO / STORY ============ -->
-      <section class="photo-section" id="story">
-        <div
-          class="section-bloom section-bloom--right"
-          aria-hidden="true"
-          data-parallax="0.06"
-        ></div>
-        <p class="story-quote reveal">
-          “Love isn't something you find. It's something you build, together,
-          one day at a time.”
-        </p>
-        <div class="photo-frame reveal reveal--scale">
-          <!-- [EDIT: PHOTO] Replace assets/couple-photo.jpg with your own photo.
-           If no photo is added, this section gracefully shows a decorative
-           panel instead — nothing breaks. -->
-          <img
-            src="assets/couple-photo.jpeg"
-            alt="Motshidisi and Nakubiana"
-            id="couple-photo"
-            onerror="
-              this.closest('.photo-frame').classList.add('photo-frame--empty');
-              this.remove();
-            "
-          />
-        </div>
-        <p class="photo-caption reveal">
-          We can't wait to celebrate this new chapter with the people we love
-          most.
-        </p>
-      </section>
-
       <!-- ============ SCHEDULE ============ -->
       <section class="schedule-section" id="schedule">
         <div
@@ -206,15 +173,31 @@
           <!-- [EDIT: SCHEDULE] -->
           <li class="schedule-item reveal reveal--left">
             <span class="schedule-dot" aria-hidden="true"></span>
-            <span class="schedule-time">1:00 PM</span>
+            <span class="schedule-time">3:00 PM</span>
             <span class="schedule-desc">
               <strong>Guest Arrival</strong>
-              Please be seated by 1:30 PM
+              Please be seated by 3:45 PM
             </span>
           </li>
           <li class="schedule-item reveal reveal--right">
             <span class="schedule-dot" aria-hidden="true"></span>
-            <span class="schedule-time">2:00 PM</span>
+            <span class="schedule-time">4:00 PM</span>
+            <span class="schedule-desc">
+              <strong>Ceremony</strong>
+              Rosewood Gardens, Main Lawn
+            </span>
+          </li>
+          <li class="schedule-item reveal reveal--left">
+            <span class="schedule-dot" aria-hidden="true"></span>
+            <span class="schedule-time">5:00 PM</span>
+            <span class="schedule-desc">
+              <strong>Cocktail Hour</strong>
+              Drinks &amp; canapés on the terrace
+            </span>
+          </li>
+          <li class="schedule-item reveal reveal--right">
+            <span class="schedule-dot" aria-hidden="true"></span>
+            <span class="schedule-time">6:30 PM</span>
             <span class="schedule-desc">
               <strong>Reception &amp; Dinner</strong>
               Speeches, dinner and dancing
@@ -231,12 +214,12 @@
           data-parallax="0.06"
         ></div>
         <p class="section-eyebrow reveal">Join Us At</p>
-        <h2 class="section-title reveal">Sago Palm Executive Lodge</h2>
+        <h2 class="section-title reveal">Rosewood Gardens</h2>
         <!-- [EDIT: VENUE] -->
-        <p class="venue-address reveal">Libala South, Lusaka Zambia</p>
+        <p class="venue-address reveal">142 Garden Lane, Karen, Nairobi</p>
         <a
           class="btn btn--outline reveal"
-          href="https://maps.app.goo.gl/5NUChgombbCr67E4A"
+          href="https://maps.google.com/?q=Rosewood+Gardens+Nairobi"
           target="_blank"
           rel="noopener"
         >
@@ -255,32 +238,85 @@
         <h2 class="section-title reveal">RSVP</h2>
         <p class="rsvp-intro reveal">
           We would be so grateful if you could let us know whether you'll be
-          joining us. <strong>Press the button below</strong> to share your
-          name, whether you're attending, if you're bringing a guest, and any
-          dietary needs.
+          joining us. Please fill in the details below.
         </p>
 
-        <div class="rsvp-arrow reveal" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M12 3v15M6 12l6 6 6-6"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+        <form class="rsvp-form reveal" id="rsvp-form" novalidate>
+          <div class="form-field">
+            <label for="rsvp-name">Full Name</label>
+            <input
+              type="text"
+              id="rsvp-name"
+              name="name"
+              autocomplete="name"
+              required
             />
-          </svg>
-        </div>
+          </div>
 
-        <a
-          class="btn btn--solid btn--pulse reveal"
-          href="https://forms.gle/BH1CEgCYJwUYVeoB7"
-          target="_blank"
-          rel="noopener"
-        >
-          RSVP Now
-        </a>
+          <fieldset class="form-field">
+            <legend>
+              Will you honor us with your presence on this special day?
+            </legend>
+            <label class="choice"
+              ><input type="radio" name="attending" value="Yes" required /><span
+                >Yes</span
+              ></label
+            >
+            <label class="choice"
+              ><input type="radio" name="attending" value="Sadly no" /><span
+                >Sadly no</span
+              ></label
+            >
+          </fieldset>
+
+          <fieldset class="form-field">
+            <legend>Will you be bringing a guest?</legend>
+            <label class="choice"
+              ><input type="radio" name="guest" value="Yes" required /><span
+                >Yes</span
+              ></label
+            >
+            <label class="choice"
+              ><input type="radio" name="guest" value="No" /><span
+                >No</span
+              ></label
+            >
+          </fieldset>
+
+          <div class="form-field">
+            <label for="rsvp-questions"
+              >Any questions? <span class="optional">(optional)</span></label
+            >
+            <textarea id="rsvp-questions" name="questions" rows="4"></textarea>
+          </div>
+
+          <p
+            class="form-message"
+            id="rsvp-message"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <button type="submit" class="btn btn--solid" id="rsvp-submit">
+            Send RSVP
+          </button>
+        </form>
+
+        <div class="rsvp-thanks" id="rsvp-thanks" hidden>
+          <h3>Thank you!</h3>
+          <p>
+            Your RSVP has been received. We can't wait to celebrate with you.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ CARD & CONTACT NOTES ============ -->
+      <section class="notes-section" id="notes">
+        <p class="notes-line reveal">K500 per card</p>
+        <p class="notes-line reveal">For queries, please reach out to:</p>
+        <p class="notes-line notes-line--contact reveal">
+          Matron Machona : <a href="tel:0972574894">0972574894</a>
+        </p>
       </section>
 
       <!-- ============ FOOTER ============ -->
@@ -303,11 +339,9 @@
 
     <!-- Floating RSVP reminder: shown once past the hero, hidden once the real RSVP section is on screen -->
     <a
-      href="https://forms.gle/BH1CEgCYJwUYVeoB7"
+      href="#rsvp"
       class="floating-rsvp"
       id="floating-rsvp"
-      target="_blank"
-      rel="noopener"
       aria-label="RSVP now"
     >
       <span class="floating-rsvp__pulse" aria-hidden="true"></span>
