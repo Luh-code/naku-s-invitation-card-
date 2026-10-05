@@ -11,7 +11,7 @@ const CONFIG = {
   googleForm: {
     // Looks like: https://docs.google.com/forms/d/e/<FORM_ID>/formResponse
     actionUrl:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdJxxZjfemhHtyC_oBf-mu75FrtPlaeWCJSEm28sbYtSTYyyA/viewform?usp=header",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdJxxZjfemhHtyC_oBf-mu75FrtPlaeWCJSEm28sbYtSTYyyA/formResponse",
     // Each looks like "entry.1234567890" (one per question in the form)
     entries: {
       name: "entry.877086558", // Full Name
