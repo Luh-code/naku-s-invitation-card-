@@ -291,8 +291,11 @@ const CONFIG = {
       // no-cors: Google doesn't send CORS headers, so the response is opaque,
       // but the submission still lands in the form's Responses tab.
       await fetch(gf.actionUrl, { method: "POST", mode: "no-cors", body });
+      if (!thanks) throw new Error("RSVP confirmation element is missing.");
+      thanks.removeAttribute("hidden");
       form.hidden = true;
-      thanks.hidden = false;
+      thanks.setAttribute("tabindex", "-1");
+      thanks.focus({ preventScroll: true });
       thanks.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (err) {
       showError(
