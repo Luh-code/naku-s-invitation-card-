@@ -11,14 +11,14 @@ const CONFIG = {
   googleForm: {
     // Looks like: https://docs.google.com/forms/d/e/<FORM_ID>/formResponse
     actionUrl:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdJxxZjfemhHtyC_oBf-mu75FrtPlaeWCJSEm28sbYtSTYyyA/formResponse",
+      "https://docs.google.com/forms/d/e/1FAIpQLSeJtqjLQNB0XE6R16jLLNpdzynl5_YQmTfXDQ7hKG4ZnPRNvQ/formResponse",
     // Each looks like "entry.1234567890" (one per question in the form)
     entries: {
       name: "entry.877086558", // Full Name
       attending: "entry.1498135098", // Will you honor us with your presence...
       guest: "entry.1424661284",
-      side: "entry.1537563506", // Side of the family
-      questions: "entry.2606285", // Any questions?
+      side: "entry.2606285", // Side of the family
+      questions: "entry.415556079", // Any questions?
     },
   },
 };
