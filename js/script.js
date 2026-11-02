@@ -3,7 +3,7 @@
    ========================================================= */
 const CONFIG = {
   // Used for the countdown timer. Format: "YYYY-MM-DDTHH:MM:SS"
-  weddingDateTime: "2026-11-11T16:00:00",
+  weddingDateTime: "2026-12-08T16:00:00",
 
   // RSVP -> Google Form. Replies are posted straight to your Google Form,
   // so they still appear in its Responses tab. See README.md ("The RSVP form")
